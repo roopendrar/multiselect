@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <title>registration page</title>
+{% endblock  %}
+
+{% block content  %}
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container"><center><h2>Register here</h2></center></div>
+            <form method="POST" class="form-group" align="center">
+                {% csrf_token %}
+                firstname:   <input type="text" class="form-control" name="first_name" id="first_name" required><br><br>
+                 lastname:   <input type="text" class="form-control" name="last_name" id="last_name" required><br><br>
+                    email:   <input type="email" class="form-control" name="email" id="email" required><br><br>
+                 password:   <input type="password" class="form-control" name="password" id="password" required><br><br>
+                phonenumber: <input type="number" class="form-control" name="phonenumber" id="phonenumber" pattern="[6-9]\d{9}" required><br><br>
+                
+                    <legend >GENDER</legend>
+                    <input type="radio" name="gender">male
+                    <input type="radio" name="gender">female
+                    </br><br>
+
+                    
+                        <legend >DOB</legend>
+                        <input type="date" name="DOB"></br></br>
+                        <input type="time" name="DOB"></br></br>
+                        <br>
+
+                        <label for="coding">coding language:</label>
+                        <select name="coding" id="coding" multiple>
+                        <option value="python">python</option>
+                        <option value="java">java</option>
+                        <option value="c">c language</option>
+                        <option value="c++">c++</option>
+                        <option value="c#">c#</option>
+                        </select><br>
+                        
+                        <h6>languages known</h6>
+                        <label for="kannada">kannada</label>
+                        <input type="checkbox" name="language" id="kannada" value="KANNADA">
+                        <label for="english">english</label>
+                        <input type="checkbox" name="language" id="english" value="ENGLISH">
+                        <label for="hindhi">hindhi</label>
+                        <input type="checkbox" name="language" id="hindhi" value="HINDHI">
+                        <label for="telugu">telugu</label>
+                        <input type="checkbox" name="language" id="telugu" value="TELUGU">
+                        <label for="tamil">tamil</label>
+                        <input type="checkbox" name="language" id="tamil" value="TAMIL"><br><br> 
+                        <input type="submit" value="register" class="btn btn-primary">
+                                        
+            </form>
+        </div>
+    </div>
+  
+{% endblock  %}
